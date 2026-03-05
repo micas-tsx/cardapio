@@ -83,16 +83,14 @@ document.getElementById('finalizar').addEventListener('click', async function() 
 
     const msg = `**Pedido de ${nomeUsuario}:**\n🍔 **Ingredientes:**\n${resumo.map(item => `- ${item}`).join('\n')}\n📝 **Observações:** ${opinioes || 'Nenhuma'}`;
 
-    // Enviar para o webhook do Discord
-    const webhookURL = process.env.WEBHOOK_URL;
-
+    // Enviar pedido para a API backend, que por sua vez chama o webhook do Discord
     try {
-        const response = await fetch(webhookURL, {
+        const response = await fetch('/api/send-order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ content: msg })
+            body: JSON.stringify({ msg })
         });
         if (response.ok) {
             atualizarBurgerVisual(true);
