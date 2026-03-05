@@ -1,0 +1,289 @@
+/* Importando uma fonte mais moderna e "comestível" */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+body {
+    background-color: #f8f1e5; /* Um creme suave para não cansar a vista */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: #ffffff;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 10px solid #e74c3c; /* Detalhe em vermelho "ketchup" */
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+p.subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-size: 0.9em;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #e67e22; /* Laranja "cheddar" */
+    margin-top: 20px;
+}
+
+/* Transformando os checkboxes em cards clicáveis */
+.ingredientes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.ingredientes label {
+    background: #fdfdfd;
+    border: 2px solid #ecf0f1;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.ingredientes label:hover {
+    border-color: #f1c40f;
+    background: #fffdf0;
+}
+
+/* Estilo quando o checkbox está marcado */
+.ingredientes input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #e74c3c;
+    width: 18px;
+    height: 18px;
+}
+
+/* Estilizando a área de texto */
+textarea {
+    width: 100%;
+    height: 100px;
+    border: 2px solid #ecf0f1;
+    border-radius: 12px;
+    padding: 12px;
+    font-family: inherit;
+    resize: none;
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #e67e22;
+}
+
+/* Estilizando o input de nome */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ecf0f1;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #e67e22;
+}
+
+/* Botão de Finalizar */
+button {
+    width: 100%;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Layout Principal */
+.main-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Grid de Ingredientes com Contadores */
+.ingrediente-item {
+    background: #fff;
+    border: 2px solid #eee;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.controls span {
+    min-width: 24px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-qty {
+    background: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0;
+    line-height: 1;
+}
+
+/* O Hamburguer Visual */
+.preview-container {
+    position: sticky;
+    top: 20px;
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.burger-stack {
+    display: flex;
+    flex-direction: column-reverse; /* Empilha de baixo para cima */
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo de cada "fatia" visual */
+.ingrediente-visual {
+    width: 180px;
+    height: 25px;
+    margin-bottom: -10px; /* Sobreposição para parecer um burger */
+    border-radius: 50px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    line-height: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    animation: fallIn 0.3s ease-out;
+}
+
+.plate {
+    width: 220px;
+    height: 15px;
+    background: #bdc3c7;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+@keyframes fallIn {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Cores específicas para cada ingrediente visual */
+.bg-pao           { background: #f39c12; height: 35px; border-radius: 10px  10px 60px 60px; }
+.bg-pao-final     { background: #f39c12; height: 35px; border-radius: 60px 60px 10px  10px ; }
+.bg-carne         { background: #6d4c41; height: 30px; }
+.bg-queijo        { background: #f1c40f; color: #333; }
+.bg-alface        { background: #2ecc71; }
+.bg-tomate        { background: #e74c3c; }
+.bg-cebola        { background:rgb(236, 233, 187); color: #333; }
+.bg-molho         { background: #8e44ad; }
+.bg-bacon         { background: #a93226; }
+.bg-ovo           { background: #f4f4f4; color: #333; border: 2px solid #f1c40f; }
+
+/* Responsividade para celular */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .main-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .preview-container {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .burger-stack {
+        align-items: center;
+    }
+
+    .ingrediente-item {
+        gap: 6px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Hamburguer Montável</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-wrapper">
+    <div class="container">
+        <h1>🍔 Burger Builder</h1>
+        <p class="subtitle">Personalize seu burger do seu jeito!</p>
+        
+        <form id="hamburguer-form">
+            <h2>Escolha e defina a quantidade:</h2>
+            <div id="lista-ingredientes" class="ingredientes-grid">
+              
+            </div>
+
+            <h2>Observações:</h2>
+            <textarea id="opinioes" placeholder="Ex: Carne bem passada..."></textarea>
+
+            <h2>Seu Nome:</h2>
+            <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+            <button type="button" id="finalizar">Mandar para a Cozinha! 🚀</button>
+        </form>
+    </div>
+
+    <div class="preview-container">
+        <div id="burger-display" class="burger-stack">
+            <div class="plate"></div>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
